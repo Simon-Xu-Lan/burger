@@ -1,0 +1,47 @@
+<h1 class="text-center mb-3">Eat-Da-Burger</h1>
+{{!-- <form action="/api/burgers" method="POST" class="mb-4 create-burger"> --}}
+<form class="create-burger">
+    <div class="form-group">
+        {{!-- <label for="name">Burger Name</label> --}}
+        <input type="text" class="form-control form-control-lg"  id="name" placeholder="Burger name">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Add Burger</button>
+</form>
+
+<div class="container burgers">
+    <div class="row">
+        <div class="col-7">
+            {{!-- <ul class="list-group"> --}}
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                    {{!-- <li class="list-group-item"> --}}
+                        <div class="burger-list">
+                            
+                            {{this.id}} - {{this.burger_name}} 
+                                <button class="devour-burger" data-id="{{id}}">Devour it</button>
+                                <button class="delete-burger" data-id="{{id}}">Delete</button>
+
+                        
+                        </div>
+                        {{!-- <input type="submit" value="Devour it" class="btn btn-primary btn-block"> --}}
+                    {{!-- </li> --}}
+                {{/unless}}
+            {{/each}}
+            {{!-- </ul> --}}
+        </div>
+        <div class="col-5">
+            {{!-- <ul class="list-group"> --}}
+            {{#each burgers}}
+                {{#if this.devoured}}
+                    <div class="burger-list">{{this.id}} - {{this.burger_name}}</div>
+                {{/if}}
+            {{/each}}
+            {{!-- </ul> --}}
+        </div>
+    </div>
+</div>
+
+
+
+{{!-- <a href="/api/burgers" class="btn btn-light mt-4">Visit API</a> --}}
+

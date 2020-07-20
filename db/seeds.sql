@@ -1,0 +1,2 @@
+USE burgers_db;
+INSERT INTO burgers (id, burger_name, devoured) VALUES (1, 'Bacon cheese burger', FALSE), (2, 'Cheese burger', FALSE ), (3, 'Turkey burger', FALSE ), (4, 'Veggie burger', FALSE), (5, 'Bacon avocado club', FALSE );
